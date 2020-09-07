@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	
+<!-- Mirrored from www.cs.usfca.edu/~galles/visualization/BFS.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2020 16:38:51 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+		
+		<title>
+			Breadth-First Search
+		</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+		<!-- css sheet for how the page is laid out -->
+		
+		<link rel="stylesheet" href="visualizationPageStyle.css">
+			
+		<!-- jqueury stuff.  Only used for the animation speed slider. -->
+		<link rel="stylesheet" href="ThirdParty/jquery-ui-1.8.11.custom.css">
+				
+		<script src="ThirdParty/jquery-1.5.2.min.js"></script>
+		<script src="ThirdParty/jquery-ui-1.8.11.custom.min.js"></script>
+				
+		<!-- Javascript for the actual visualization code -->
+		<script type = "text/javascript" src = "AnimationLibrary/CustomEvents.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/UndoFunctions.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimatedObject.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimatedLabel.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimatedCircle.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimatedRectangle.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimatedLinkedList.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/HighlightCircle.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/Line.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/ObjectManager.js"> </script>
+		<script type = "text/javascript" src = "AnimationLibrary/AnimationMain.js"> </script>
+		<script type = "text/javascript" src = "AlgorithmLibrary/Algorithm.js"> </script>
+		<script type = "text/javascript" src = "AlgorithmLibrary/Graph.js"> </script>
+		<script type = "text/javascript" src = "AlgorithmLibrary/BFS.js"> </script> 
+
+
+		
+		
+
+
+				
+			
+	 </head> 
+	
+	<body onload="init();" class="VisualizationMainPage">
+		
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  			<a class="navbar-brand" href="index.html">Alogrithm Visualizer</a>
+  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+    			<ul class="navbar-nav">
+      				<li class="nav-item">
+        				<a class="nav-link" href="DFS.html">DFS </a>
+      				</li>
+      				<li class="nav-item active">
+        				<a class="nav-link" href="BFS.html">BFS (Clear) <span class="sr-only">(current)</span></a>
+      				</li>
+				    <li class="nav-item">
+        				<a class="nav-link" href="Dijkstra.html">Dijkstra</a>
+      				</li>
+
+      				
+    		</ul>
+  		</div>
+		</nav>	
+
+		<br/> <br/> <br/><br/> <br/> <br/>
+		<div id = "container">
+			
+			<div id="header">  
+				<h1>Breadth-First Search</h1>
+			</div>
+			
+			<div  id = "mainContent"> 
+				
+				<div id = "algoControlSection">
+					<!-- Table for buttons to control specific animation (insert/find/etc) -->
+					<!-- (filled in by javascript code specific to the animtion) -->
+					<table id="AlgorithmSpecificControls"> </table> 
+				</div>
+				
+					<!-- Drawing canvas where all animation is done.  Note:  can be resized in code -->
+									
+				<canvas id="canvas" width="1000" height="500"></canvas>
+				
+				<div id = "generalAnimationControlSection">
+					<!-- Table for buttons to control general animation (play/pause/undo/etc) ->
+					<!-- (filled in by javascript code, specifically AnimationMain.js)  -->
+
+					<table id="GeneralAnimationControls">  </table>		
+				</div>
+				
+			</div> <!-- mainContent -->
+			
+			<div id="footer">  
+				<p><a href="Algorithms.html"></a></p>
+			</div>
+
+		</div><!-- container -->
+		
+		
+	</body>
+
+<!-- Mirrored from www.cs.usfca.edu/~galles/visualization/BFS.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 22 May 2020 16:38:51 GMT -->
+</html>
